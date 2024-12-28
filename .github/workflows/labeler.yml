@@ -1,0 +1,35 @@
+name: Labeler
+on: [pull_request_target]
+
+jobs:
+  label:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+    - uses: actions/labeler@v5
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        sync-labels: true
+        dot: true
+        labels: |
+          SC:
+            - any:
+              - changed-files:
+                - any-glob-to-any-file: 'site/*'
+          IC:
+            - any:
+              - changed-files:
+                - any-glob-to-any-file: 'integrate_this/*'
+          OC:
+            - any:
+              - changed-files:
+                - any-glob-to-any-file:
+                  - '**/*'
+                - all-globs-to-all-files:
+                  - '!site/*'
+                  - '!integrate_this/*'
+                  - '!CHANGELOG.md'
