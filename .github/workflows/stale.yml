@@ -1,0 +1,33 @@
+name: Check PR and Issues relevance
+
+on:
+  schedule:
+    - cron: '30 8 * * *'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: write
+    steps:
+    - uses: actions/stale@v9
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stale-issue-message: 'Проблема неактивна в течение длительного времени. Если проблема все еще актуальна, пожалуйста, оставьте комментарий.'
+        stale-pr-message: 'Запрос на слияние неактивен в течение длительного времени. Если запрос на слияние все еще актуален, пожалуйста, оставьте комментарий.'
+        close-issue-message: 'Проблема была закрыта из-за отсутствия активности в течение длительного времени.'
+        close-pr-message: 'Запрос на слияние был закрыт из-за отсутствия активности в течение длительного времени.'
+        stale-issue-label: 'Awaiting Feedback'
+        stale-pr-label: 'Awaiting Updates'
+        days-before-stale: 31
+        days-before-close: 93
+        remove-stale-when-updated: true
+        operations-per-run: 30
+        delete-branch: true
+        exempt-draft-pr: true
+        exempt-issue-milestones: 'future,alpha,beta,rc'
+        exempt-issue-labels: fix-coming,will-be-fixed,dropped
+        exempt-pr-labels: planned,VIP,FOXFORD,ADS,WBM
+        
