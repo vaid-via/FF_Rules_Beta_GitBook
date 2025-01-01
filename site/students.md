@@ -671,8 +671,8 @@ _(Подробнее уточняйте у администрации чата �
 Если бот был официально одобрен администрацией, персоналом ФоксФорд или прописан в правилах, то тогда его использование разрешено.
 {% endhint %}
 
-{% content-ref url="https://app.gitbook.com/o/Q99gfZYiSmXU42QLtxEp/snippet/25141" %}
-[🤖 Разрешённые и запрещённые боты. | FOXFORD Rules](https://app.gitbook.com/o/Q99gfZYiSmXU42QLtxEp/snippet/25141)
+{% content-ref url="https://app.gitbook.com/s/zxd7yLO3YAw233Y2RBKa/allowed-and-prohibited-bots-foxford-rules" %}
+[🤖 Разрешённые и запрещённые боты. | FOXFORD Rules](https://app.gitbook.com/s/zxd7yLO3YAw233Y2RBKa/allowed-and-prohibited-bots-foxford-rules)
 {% endcontent-ref %}
 
 {% hint style="warning" %}
